@@ -82,7 +82,7 @@ nav {
   h2 {
     margin-top: 30px;
     color: #ffffff;
-    font-size:small;
+    font-size:20px;
     align-items:baseline;
     text-align: justify;
   }
@@ -99,10 +99,18 @@ img{
 .Introduction{
     position: fixed;
     align-items:baseline;
-    top: 20%;
-    left:10%;
-    right:60%;
+    top: 30%;
+    left:20%;
+    right:50%;
   }
+.AboutUs{
+    position: fixed;
+    align-items:baseline;
+    top: 30%;
+    left:20%;
+    right:20%;
+}
+
 
 .social-bar {
     position: fixed;
@@ -130,4 +138,40 @@ img{
 
 .social-icon img:hover {
     transform: scale(1.1);
+}
+
+.our-team {
+    position: fixed;
+    align-items:baseline;
+    top: 65%;
+    left:15%;
+    right:15%;
+}
+
+.team-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+.team-member {
+    background-color: #68c4f6;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 15%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    color:#fffefe;
+}
+
+.team-member img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.team-member p {
+    margin: 2px 0;
 }
