@@ -175,3 +175,33 @@ img{
 .team-member p {
     margin: 2px 0;
 }
+.contact {
+    position: fixed;
+    top: 30%;
+    left:15%;
+    
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+.contact-space {
+    padding:30px;
+    border-radius: 5px;
+    width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    color:#fffefe;
+}
+.contact-input{
+    background-color: transparent;
+    border-color: #fffefe;
+    width: 400px !important
+}
+#message{
+    height: 100px;
+}
