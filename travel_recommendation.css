@@ -97,7 +97,7 @@ img{
     color: #fcfafa;
 }
 .Introduction{
-    position: fixed;
+    position: absolute;
     align-items:baseline;
     top: 30%;
     left:20%;
@@ -113,7 +113,7 @@ img{
 
 
 .social-bar {
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 0;
     transform: translateY(-50%);
@@ -204,4 +204,19 @@ img{
 }
 #message{
     height: 100px;
+}
+.explore-results{
+    position:absolute;
+    align-items:baseline;
+    top: 30%;
+    left:60%;
+    right:7%;
+    max-height: 2000px;
+    color:#fffefe;
+  }
+  .explore-results img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    align-items: center;
 }
