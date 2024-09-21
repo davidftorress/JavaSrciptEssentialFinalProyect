@@ -1,13 +1,10 @@
 let data = [];
-/*
 const timeZones = {
-    "Australia": "Australia/Sydney",
-    "Japan": "Asia/Tokyo",
-    "Brazil": "America/Sao_Paulo",
-    "India": "Asia/Kolkata",
-    "USA": "America/New_York"
+    "australia": "Australia/Sydney",
+    "japan": "Asia/Tokyo",
+    "brazil": "America/Sao_Paulo",
+    
 };
-const currentlyTime = new Date().toLocaleTimeString('en-US', options);
 
 //Funcion Hora local
 function getOptions(country) {
@@ -23,7 +20,7 @@ function getOptions(country) {
         second: 'numeric'
     };
 }
-*/
+
 // Cargar datos del archivo JSON
 fetch('travel_recommendation_api.json')
     .then(response => {
@@ -43,7 +40,8 @@ fetch('travel_recommendation_api.json')
 // funciones
 function search() {
     const input = document.getElementById('conditionInput').value.toLowerCase();
-   // const options = getOptions(input);
+    const options = getOptions(input);
+    const currentlyTime = new Date().toLocaleTimeString('en-US', options);
 
     const resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = '';
@@ -96,6 +94,7 @@ filteredResults.forEach(item => {
         <h3>${item.name}</h3>
         <img src="${item.imageUrl}" alt="${item.name}">
         <p>${item.description}</p><br>
+        <p>Current time in ${input}: ${currentlyTime} </p><br>
         <br><button>Visit</button>
 
     `;
