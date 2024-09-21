@@ -1,16 +1,16 @@
 let data = [];
+let country;
 const timeZones = {
     "australia": "Australia/Sydney",
     "japan": "Asia/Tokyo",
-    "brazil": "America/Sao_Paulo",
-    
+    "brazil": "America/Sao_Paulo",    
 };
 
 //Funcion Hora local
 function getOptions(country) {
     const timeZone = timeZones[country];
     if (!timeZone) {
-        throw new Error(`Zona horaria no encontrada para el país: ${country}`);
+       return 0;
     }
     return {
         timeZone: timeZone,
@@ -40,9 +40,6 @@ fetch('travel_recommendation_api.json')
 // funciones
 function search() {
     const input = document.getElementById('conditionInput').value.toLowerCase();
-    const options = getOptions(input);
-    const currentlyTime = new Date().toLocaleTimeString('en-US', options);
-
     const resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = '';
     const filteredResults = [];
@@ -90,16 +87,26 @@ function search() {
   // Mostrar resultados
 filteredResults.forEach(item => {
     const itemDiv = document.createElement('div');
+   
     itemDiv.innerHTML = `
         <h3>${item.name}</h3>
         <img src="${item.imageUrl}" alt="${item.name}">
         <p>${item.description}</p><br>
-        <p>Current time in ${input}: ${currentlyTime} </p><br>
         <br><button>Visit</button>
 
     `;
     resultsDiv.appendChild(itemDiv);
 });  
+const options = getOptions(input);
+if(options!=0){
+    const currentlyTime = new Date().toLocaleTimeString('en-US', options);
+    const itemP= document.createElement("p");
+    itemP.innerHTML= `La hora local en ${input} es: ${currentlyTime}`;
+    resultsDiv.appendChild(itemP);
+}
+
+
+
   
 }
 
